@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>let vs const</title>
+  </head>
+  <body>
+    <script>
+      const key = "abc123";
+      let points = 50;
+      let winner = false;
+      const person = {
+        name: "Mynor",
+        age: 27
+      };
+
+      //  let points = 60; Error! let variables can't be declared again
+
+      points = 60; // Can be reassigned
+
+      if (points > 40) {
+        let winner = true; // Since they're in different scopes they are actually different variables
+      }
+
+      // key = "false";  // Can't be reassigned
+
+      person.age = 28; // Properties of a const object can be reassigned, but not the object itself
+
+      const ricky = Object.freeze(person); // If you want an object which properties can't be updated you can use methods like Object.freeze()
+    </script>
+  </body>
+</html>

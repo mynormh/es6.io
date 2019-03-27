@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>let & const in real life</title>
+  </head>
+  <body>
+    <script>
+      // var name = "Mynor";  // Leaks into the global scope
+      (function() {
+        var name = "Mynor"; // Doesn't leak into the global scope
+      })();
+
+      {
+        const surname = "Ricky"; // Doesn't leak into the global scope because it's inside a block
+      }
+
+      // i is available in the global scope
+      // for (var i = 0; i < 10; i++) {
+      //   console.log(i);
+      //   setTimeout(function() {
+      //     console.log(`The number is ${i}`); // Will only log `10` since `var i` is function scoped and it overrides the value everytime, by the time setTimeout runs the value is `10`
+      //   }, 1000);
+      // }
+
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        setTimeout(function() {
+          console.log(`The number is ${i}`); // Outputs every number (0-9) since the i variable is block scoped
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
