@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>If Statement</title>
+  </head>
+  <body>
+    <script>
+      const songs = [
+        {
+          name: "Dying to live",
+          artist: "Tupac",
+          featuring: "Biggie Smalls"
+        },
+        {
+          name: "Dear Mama",
+          artist: "Tupac"
+        }
+      ];
+
+      const markup = `
+          <div class="song">
+            ${songs
+              .map(
+                song => `<p>
+              ${song.name} - ${song.artist}
+              ${song.featuring ? `(Featuring ${song.featuring})` : ``}
+            </p>`
+              )
+              .join("")}
+          </div>
+        `;
+
+      document.body.innerHTML = markup;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Create HTML Fragments</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "Mynor",
+        job: "Web Developer",
+        city: "Guatemala",
+        bio: "Mynor is a really cool guy that loves learning to code"
+      };
+
+      // const text = 'Hello \
+      //   this is a text \
+      //   with line breaks'; // old way
+
+      var markup = `
+        <div class="person">
+          <h2>${person.name}
+            <span class="job">${person.job}</span>
+          </h2>
+          <p class="location">${person.city}</p>
+          <p class="bio">${person.bio}</p>
+        </div>
+      `;
+
+      document.body.innerHTML = markup;
+    </script>
+  </body>
+</html>
