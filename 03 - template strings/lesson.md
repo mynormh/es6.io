@@ -6,7 +6,8 @@
 
 - You can include any valid JS expression inside `${}`, like markup, math expressions, array functions (map, filter...), if statements, a function call, etc.
 
-- A tagged template literal is basically us taking a template string and running it by a function, thus having control of how the variables are replaced. The syntax is simply putting the name of the function before the string template `functionName`myTemplateString \${var}``, the function gets an array of the strings and each one of the variables in the template string (using the rest operator we can group them in an array) and whatever is returned by the function is what the value of the entire string will be.
+- A tagged template literal is basically us taking a template string and running it by a function, thus having control of how the variables are replaced. The syntax is simply putting the name of the function before the string template
+  `` functionName`myTemplateString ${var}` ``, the function gets an array of the strings and each one of the variables in the template string (using the rest operator we can group them in an array) and whatever is returned by the function is what the value of the entire string will be.
 
 - One trick to pass text as a variable to a tagged template literal is to use simple quotes inside the variable syntax: `${'myText'}`, and they will still show up in the variables part of the function.
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>String Methods</title>
+  </head>
+  <body>
+    <script>
+      const course = "RFB2";
+      const flightNumber = "20-AC2018-jz";
+      const accountNumber = "825242631RT0001";
+
+      const make = "AUDI";
+      const model = "A3";
+      const colour = "Light Gray";
+
+      console.log(course.startsWith("RFB")); // true
+      console.log(course.startsWith("rfb")); // false
+      console.log(flightNumber.startsWith("AC", 3)); // true
+
+      console.log(flightNumber.endsWith("jz")); // true
+      console.log(accountNumber.endsWith("RT", 11)); // true
+
+      console.log(flightNumber.includes("AC")); // true
+      console.log(flightNumber.includes("ac")); // false
+
+      function leftPad(str, length = 20) {
+        return `-> ${" ".repeat(length - str.length)}${str}`;
+      }
+
+      console.log(leftPad(make));
+      console.log(leftPad(model));
+      console.log(leftPad(colour));
+
+      console.log(`${"💃" * 5}`.repeat(10) + "Batman!");
+    </script>
+  </body>
+</html>
