@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Destructuring Objects</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        first: "Mynor",
+        last: "Morales",
+        country: "Guatemala",
+        city: "Guatemala",
+        twitter: "@mynormh"
+      };
+
+      //Old way
+      // const first = person.first;
+      // const last = person.last;
+
+      const { first, last, twitter } = person;
+
+      const mynor = {
+        first: "Mynor",
+        last: "Morales",
+        links: {
+          social: {
+            twitter: "https://twitter.com/mynormh",
+            github: "https://github.com/mynormh"
+          },
+          web: {
+            blog: "https://mynormh.com"
+          }
+        }
+      };
+
+      //Old way
+      // const twitter = wes.links.social.twitter;
+      // const github = wes.links.social.github;
+
+      const { twitter: tweet, github: gh } = mynor.links.social;
+
+      const settings = { width: 300, color: "black" }; // height, fontSize
+      const {
+        width = 100,
+        height = 100,
+        color = "blue",
+        fontSize = 25
+      } = settings;
+
+      // Object destructuring with variable renaming and default values (everything together)
+      const { w: rectWidth = 400, h: rectHeight = 500 } = { w: 800 };
+    </script>
+  </body>
+</html>

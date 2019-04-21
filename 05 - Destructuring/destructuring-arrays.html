@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Destructuring Arrays</title>
+  </head>
+  <body>
+    <script>
+      const details = ["Mynor Morales", 123, "mynormh.com"];
+
+      //Old way
+      // const name = details[0];
+      // const id = details[1];
+
+      const [name, id, website] = details;
+
+      const data = "Basketball,Sports,90210,23,mynor,morales,cool";
+      const [itemName, category, sku, inventory] = data.split(",");
+
+      const team = ["Mynor", "Andy", "Kathy", "Mía", "Lurdis"];
+      const [captain, assistant, ...players] = team;
+    </script>
+  </body>
+</html>
