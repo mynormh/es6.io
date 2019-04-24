@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>.some() and .every()</title>
+  </head>
+  <body>
+    <script>
+      const ages = [32, 15, 19, 12];
+
+      // at least one adult in the group?
+      const adultsPresent = ages.some(age => age >= 18);
+      console.log(adultsPresent);
+
+      // everyone old enough to drink?
+      const allOldEnough = ages.every(age => age >= 18);
+      console.log(allOldEnough);
+    </script>
+  </body>
+</html>
