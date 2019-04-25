@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Spread Into A Function</title>
+  </head>
+  <body>
+    <script>
+      const inventors = ["Einstein", "Newton", "Galileo"];
+      const newInventors = ["Musk", "Jobs"];
+
+      // Old way, when you call apply it's going to call the function you called apply agains (push) but as every single item of the array as an argument
+      // inventors.push.apply(inventors, newInventors);
+
+      inventors.push(...newInventors);
+
+      const name = ["Mynor", "Morales"];
+      function sayHi(first, last) {
+        alert(`Hey there ${first} ${last}`);
+      }
+
+      sayHi(...name);
+    </script>
+  </body>
+</html>

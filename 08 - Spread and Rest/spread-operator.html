@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>...Spread Operator</title>
+  </head>
+  <body>
+    <script>
+      const featured = ["Deep Dish", "Pepperoni", "Hawaiian"];
+      const specialty = ["Meatzza", "Spicy Mama", "Margherita"];
+
+      // Old way to concatenate two arrays, but the second array will always be behind the first one. And can't insert between them
+      //const pizzas = featured.concat(specialty);
+
+      // A way to insert between the two arrays but it's too cumbersome
+      // let pizzas = [];
+      // pizzas = pizzas.concat(featured);
+      // pizzas.push("Veg");
+      // pizzas = pizzas.concat(specialty);
+
+      let pizzas = [...featured, "veg", ...specialty];
+      console.log(pizzas);
+
+      // This doesn't copy the array, it just makes fridayPizzas a reference to the pizzas array. So if we modify an item in fridayPizzas it will also be modified on pizzas.
+      // const fridayPizzas = pizzas;
+
+      // Old way to fix this, it will create a copy of the pizzas array
+      // const fridayPizzas = [].concat(pizzas);
+
+      // It will make a copy of the array, so we can modify each of them without affecting the other
+      const fridayPizzas = [...pizzas];
+
+      const deepDish = {
+        pizzaName: "Deep Dish",
+        size: "Medium",
+        ingredients: ["Marinara", "Italian Sausage", "Dough", "Cheese"]
+      };
+    </script>
+  </body>
+</html>
