@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Object Literal Upgrades</title>
+  </head>
+  <body>
+    <script>
+      const first = "Newt";
+      const last = "Morales";
+      const age = 1;
+      const breed = "English Bulldog";
+
+      const dog = {
+        first,
+        last,
+        age,
+        breed
+      };
+
+      const modal = {
+        create(selector) {},
+        open(content) {},
+        close(goodbye) {}
+      };
+
+      function invertColor(color) {
+        return (
+          "#" +
+          (
+            "000000" +
+            (0xffffff ^ parseInt(color.substring(1), 16)).toString(16)
+          ).slice(-6)
+        );
+      }
+
+      const key = "pocketColor";
+      const value = "#ffcc600";
+
+      const tShirt = {
+        // Always been posible, setting the property name dynamically
+        [key]: value,
+        // New in ES6, compute the property key right inside the []
+        [`${key}Opposite`]: invertColor(value)
+      };
+
+      const keys = ["size", "color", "weight"];
+      const values = ["medium", "red", 100];
+
+      const shirt = {
+        // shift() removes the first item from an array and returns it
+        [keys.shift()]: values.shift(),
+        [keys.shift()]: values.shift(),
+        [keys.shift()]: values.shift()
+      };
+    </script>
+  </body>
+</html>
