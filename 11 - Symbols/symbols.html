@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Symbols</title>
+  </head>
+  <body>
+    <script>
+      const mynor = Symbol("Mynor"); // Mynor is just the descriptor of the symbol, the actual Symbol would be something like asd089hfjlsfeli3h00dfhacowe
+      const person = Symbol("Mynor");
+      // mynor === person returns false because they are absolutely unique
+
+      const classRoom = {
+        // Rather than using the person's name, in case they have the same name, we can use a Symbol
+        // Mark: { grade: 50, gender: "male" },
+        // Olivia: { grade: 80, gender: "female" },
+        // Olivia: { grade: 80, gender: "female" }  // We would have the same key "Olivia" twice
+        [Symbol("Mark")]: { grade: 50, gender: "male" },
+        [Symbol("Olivia")]: { grade: 80, gender: "female" },
+        [Symbol("Olivia")]: { grade: 80, gender: "female" }
+      };
+
+      for (const person in classRoom) {
+        console.log(person); // Won't result in an Error but you won't get anything because Symbols aren't enumerable
+      }
+
+      // To loop over Symbols you can use Object.getOwnPropertySymbols(..)
+      const syms = Object.getOwnPropertySymbols(classRoom);
+      const data = syms.map(sym => classRoom[sym]); // Remember the names are just descriptors, so to access the data you need the actual Symbol which you don't really know
+      console.log(data);
+    </script>
+  </body>
+</html>
