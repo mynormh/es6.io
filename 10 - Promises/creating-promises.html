@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Creating Promises 🔧</title>
+  </head>
+  <body>
+    <script>
+      const p = new Promise((resolve, reject) => {
+        // Probably some processing on the background or an AJAX request
+        setTimeout(() => {
+          resolve("Mynor is cool");
+        }, 1000);
+
+        // Reject the promise with an Error
+        // setTimeout(() => {
+        //   reject(Error("Mynor isn't cool"));
+        // }, 1000);
+      });
+
+      p.then(data => {
+        console.log(data);
+      }).catch(err => {
+        console.log(err);
+      });
+    </script>
+  </body>
+</html>
