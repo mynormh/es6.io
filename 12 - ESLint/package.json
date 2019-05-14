@@ -1,0 +1,26 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "fixlint": "eslint **/*.js --fix",
+    "linthtml": "eslint **/*.html",
+    "lintmd": "eslint **/*.md"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-eslint": "^10.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-markdown": "^1.0.0",
+    "eslint-plugin-react": "^7.13.0"
+  }
+}
