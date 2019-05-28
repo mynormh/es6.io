@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Generators</title>
+  </head>
+  <body>
+    <script>
+      function* listPeople() {
+        yield "Mynor";
+        yield "Kathy";
+        yield "Mía";
+      }
+
+      const people = listPeople(); // people is assigned the actual generator
+      console.log(people.next()); // logs an object with the value and a bolean indicator if the generator is done
+
+      function* numberList() {
+        let i = 0;
+        yield i;
+        i++;
+        yield i;
+        i++;
+        yield i;
+      }
+
+      const numbers = numberList();
+      console.log(numbers.next());
+      console.log(numbers.next());
+      console.log(numbers.next());
+      console.log(numbers.next());
+
+      const inventors = [
+        { first: "Albert", last: "Einstein", year: 1879 },
+        { first: "Isaac", last: "Newton", year: 1643 },
+        { first: "Galileo", last: "Galilei", year: 1564 },
+        { first: "Marie", last: "Curie", year: 1867 },
+        { first: "Johannes", last: "Kepler", year: 1571 },
+        { first: "Nicolaus", last: "Copernicus", year: 1473 },
+        { first: "Max", last: "Planck", year: 1858 }
+      ];
+
+      function* loop(arr) {
+        for (const item of arr) {
+          yield item;
+        }
+      }
+
+      const inventorGen = loop(inventors);
+      console.log(inventorGen.next().value);
+      console.log(inventorGen.next().value);
+      console.log(inventorGen.next().value);
+      console.log(inventorGen.next().value);
+      console.log(inventorGen.next().value); // Call it until it's done
+    </script>
+  </body>
+</html>
