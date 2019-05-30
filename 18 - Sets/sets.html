@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sets</title>
+  </head>
+  <body>
+    <script>
+      const people = new Set();
+      people.add("Mynor");
+      people.add("Ricky");
+      people.add("Newt");
+
+      console.log(people);
+      console.log(people.size); // not length because it's not index based
+
+      people.delete("Ricky");
+      console.log(people);
+
+      const it = people.values(); // returns a set generator
+      for (const person of people) {
+        console.log(person);
+      }
+
+      const students = new Set(["Mynor", "Kathy", "Andy"]);
+      const dogs = ["Newt", "Snickers"];
+      const dogSet = new Set(dogs);
+
+      console.log(students.has("Andy")); // true
+      console.log(students.has("Myyynor")); // false
+
+      students.add("Mynor"); // Won't return an error but "Mynor" will be only once
+      console.log(students[0]); // Logs undefined because a Set is not index based
+    </script>
+  </body>
+</html>
