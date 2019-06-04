@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Waiting on Multiple Promises</title>
+  </head>
+  <body>
+    <script>
+      // async function go() {
+      //   const p1 = fetch("https://api.github.com/users/mynormh");
+      //   const p2 = fetch("https://api.github.com/users/wesbos");
+      //   // Wait for both
+      //   const res = await Promise.all([p1, p2]);
+      //   const dataPromises = res.map(r => r.json());
+      //   const [mynor, wes] = await Promise.all(dataPromises);
+      //   console.log(mynor, wes);
+      // }
+
+      // go();
+
+      // Another way for the same result
+      async function getData(names) {
+        const promises = names.map(name =>
+          fetch(`https://api.github.com/users/${name}`).then(r => r.json())
+        );
+        const [mynor, wes] = await Promise.all(promises);
+        console.log(mynor, wes);
+      }
+
+      getData(["mynormh", "wesbos"]);
+    </script>
+  </body>
+</html>
