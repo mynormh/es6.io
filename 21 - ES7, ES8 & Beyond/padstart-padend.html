@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>String Padstart & Padend</title>
+  </head>
+  <body>
+    <head>
+      <title>String padStart and</title>
+    </head>
+    <script>
+      const strings = ["short", "medium size", "this is really really long"];
+      const longestString = strings
+        .sort((a, b) => b.length - a.length)
+        .map(str => str.length)[0];
+
+      strings.forEach(str => {
+        console.log(str.padStart(longestString));
+      });
+    </script>
+  </body>
+</html>
